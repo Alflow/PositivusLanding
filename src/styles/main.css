@@ -1,0 +1,49 @@
+@import "./reset.css";
+@import "./variables.css";
+
+body {
+  font-family: "Space Grotesk", sans-serif;
+}
+
+main {
+  background-color: var(--color-white);
+  color: var(--color-black);
+  /* para que no se desborde nada */
+  padding-inline: 100px;
+}
+
+.label {
+  width: fit-content;
+  padding-inline: 7px;
+  padding-block: 3px;
+  font-weight: 500px;
+  font-size: 40px;
+  border-radius: 7px;
+}
+.label--green {
+  background-color: var(--color-green);
+  color: var(--color-black);
+}
+.label--white {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}
+.label--black {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+.btn {
+  border-radius: 14px;
+  width: fit-content;
+  padding-inline: 35px;
+  padding-block: 20px;
+}
+
+.btn.btn--black {
+  background-color: var(--color-black);
+  color: var(--color-white);
+}
+.btn.btn--white {
+  background-color: var(--color-white);
+  color: var(--color-black);
+}

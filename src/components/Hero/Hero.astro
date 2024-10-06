@@ -1,0 +1,86 @@
+<section class="hero">
+  <div class="hero-wrapper">
+    <div class="hero__container hero__container--left">
+      <h1>Navigating the digital landscape for success</h1>
+      <p>
+        Our digital marketing agency helps businesses grow and succeed online
+        through a range of services including SEO, PPC, social media marketing,
+        and content creation.
+      </p>
+      <a href="" class="btn btn--black">Book a consultation</a>
+    </div>
+    <div class="hero__container hero__container--right">
+      <img src="/images/hero/hero_image.webp" alt="" />
+    </div>
+  </div>
+  <div class="hero__companies">
+    <div class="company-logo"><img src="/images/hero/amazon.png" alt=""></div>
+    <div class="company-logo"><img src="/images/hero/dribbble.png" alt=""></div>
+    <div class="company-logo"><img src="/images/hero/hubspot.png" alt=""></div>
+    <div class="company-logo"><img src="/images/hero/netflix.png" alt=""></div>
+    <div class="company-logo"><img src="/images/hero/notion.png" alt=""></div>
+    <div class="company-logo"><img src="/images/hero/zoom.png" alt=""></div>
+  </div>
+</section>
+
+<style>
+  .hero {
+    width: 100%;
+    margin-top: 70px;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    justify-content: space-between;
+  }
+  
+  .hero-wrapper{
+    display: flex;
+    justify-content: space-between;
+    max-height: 515px;
+  }
+  .hero__container {
+    max-width: 500px;
+  }
+  .hero__container--right {
+    display: flex;
+    aspect-ratio: 1;
+  }
+  .hero__container--right img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+  }
+
+  .hero h1 {
+    font-size: 60px;
+    line-height: normal;
+  }
+  .hero h2 {
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 28px;
+  }
+
+  .hero__container--left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 30px;
+    text-wrap: balance;
+  }
+
+  .hero__companies {
+    display: grid;
+    grid-template-columns: repeat( 6, 1fr);
+    gap: 4rem;
+  }
+  .hero__companies .company-logo {
+    display: flex;
+  }
+  .company-logo img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+</style>

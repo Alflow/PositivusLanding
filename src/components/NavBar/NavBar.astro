@@ -1,0 +1,61 @@
+<nav class="nav">
+  <div class="nav__logo">
+    <img src="/images/logos/positivus_logo.webp" alt="">
+  </div>
+  <div class="nav__menu">
+    <a href="" class="nav__menu-item">About Us</a>
+    <a href="" class="nav__menu-item">Services</a>
+    <a href="" class="nav__menu-item">Use Cases</a>
+    <a href="" class="nav__menu-item">Pricing</a>
+    <a href="" class="nav__menu-item">Blog</a>
+    <a href="" class="btn">Request a quote</a>
+  </div>
+</nav>
+<style>
+    nav{
+        display: flex;
+        align-items: center;
+        padding-inline : 100px;
+        justify-content: space-between;
+        font-size: 20px;
+        padding-top: 30px;
+    }
+
+    .nav__logo{
+        max-width: 220px;
+        max-height: 36px;
+        display: flex;
+    }
+
+    .nav__logo img{
+        width: 100%;
+        height: auto;
+        object-fit: cover;
+    }
+
+    .nav__menu {
+        display: flex;
+        gap: 40px; 
+    }
+
+    .nav__menu-item{
+        display: flex;
+        align-items: center;
+    }
+    .nav__menu-item:last-child{
+        border: solid 1px;
+        border-radius: 14px;
+    }
+    
+    .nav__menu a:hover {
+        text-decoration: underline;
+        text-underline-offset: 4px;
+    }
+
+    .nav__menu .btn{
+        border: solid 1px var(--color-black);
+        padding-inline: 35px;
+        padding-block: 20px;
+    }
+
+</style>

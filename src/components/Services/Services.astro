@@ -1,0 +1,73 @@
+---
+import ServiceCard from "../Card/ServiceCard.astro";
+---
+
+<section class="services">
+  <div class="services__header">
+    <h1 class="label label--green">Services</h1>
+    <p>
+      At our digital marketing agency, we offer a range of services to help
+      businesses grow and succeed online. These services include:
+    </p>
+  </div>
+  <div class="services__content">
+    <ServiceCard
+      title="Search engine optimization"
+      link="#"
+      imageSrc="/images/services/search-engine.png"
+      colorScheme="white-green"
+    />
+    <ServiceCard
+      title="Pay-per-click advertising"
+      link="#"
+      imageSrc="/images/services/search-engine.png"
+      colorScheme="green-white"
+    />
+    <ServiceCard
+      title="Social Media Marketing"
+      link="#"
+      imageSrc="/images/services/search-engine.png"
+      colorScheme="black-white"
+    />
+    <ServiceCard
+      title="Email Marketing"
+      link="#"
+      imageSrc="/images/services/search-engine.png"
+      colorScheme="white-green"
+    />
+    <ServiceCard
+      title="Creation Content"
+      link="#"
+      imageSrc="/images/services/search-engine.png"
+      colorScheme="green-white"
+    />
+    <ServiceCard
+      title="Analytics and Tracking"
+      link="#"
+      imageSrc="/images/services/search-engine.png"
+      colorScheme="black-green"
+    />
+  </div>
+</section>
+
+<style>
+  .services {
+    margin-top: 140px;
+  }
+  .services__header {
+    display: flex;
+    justify-content: start;
+    gap: 40px;
+    align-items: center;
+  }
+  .services__header p {
+    text-wrap: balance;
+    max-width: 580px;
+  }
+  .services__content {
+    margin-top: 80px;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+</style>
