@@ -1,0 +1,61 @@
+---
+const { cardNumber, title, link, content } = Astro.props;
+---
+
+<div class="dropdown-card">
+  <div class="dropdown-card__header">
+    <div class="header__content">
+      <span class="cardNumber">01</span>
+      <h2>Consultation</h2>
+    </div>
+    <input type="checkbox" id="dropdown-toggle" />
+  </div>
+  <div class="dropdown-card__body">
+    <p>
+      During the initial consultation, we will discuss your business goals and
+      objectives, target audience, and current marketing efforts. This will
+      allow us to understand your needs and tailor our services to best fit your
+      requirements.
+    </p>
+  </div>
+</div>
+
+<style>
+  .dropdown-card {
+    background-color: var(--color-gray-mid);
+    border-radius: 45px;
+    padding-inline: 60px;
+    padding-block: 40px;
+  }
+  .dropdown-card__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 30px;
+  }
+  .dropdown-card__header .header__content {
+    display: flex;
+    gap: 25px;
+  }
+  .dropdown-card__header .header__content .cardNumber {
+    font-size: 60px;
+  }
+  .dropdown-card__header .header__content h2 {
+    color: #000;
+    font-size: 30px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: normal;
+    display: flex;
+    align-items: center;
+  }
+  .dropdown-card__body {
+    border-top: solid 1px var(--color-black);
+    padding-top: 30px;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    color: var(--color-black);
+  }
+</style>

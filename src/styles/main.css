@@ -37,8 +37,11 @@ main {
   width: fit-content;
   padding-inline: 35px;
   padding-block: 20px;
+  transition: all .2s ease-in-out;
 }
-
+.btn:hover {
+  scale: 1.08;
+}
 .btn.btn--black {
   background-color: var(--color-black);
   color: var(--color-white);
