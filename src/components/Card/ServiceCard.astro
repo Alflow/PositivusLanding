@@ -1,4 +1,5 @@
 ---
+// las variables de las propiedades que recibirá el componente
 const { title, link, colorScheme, imageSrc } = Astro.props;
 
 const cardClass = colorScheme ? `${colorScheme}` : "card-default";
@@ -101,6 +102,9 @@ const cardClass = colorScheme ? `${colorScheme}` : "card-default";
     gap: 15px;
     align-items: center;
   }
+  .learn-more:hover {
+    text-decoration: underline;
+  }
   .learn-more__icon {
     transform: rotate(90deg);
     width: fit-content;
@@ -119,6 +123,13 @@ const cardClass = colorScheme ? `${colorScheme}` : "card-default";
   :is(.service-card--white-green, .service-card--green-white) .learn-more__icon svg {
     filter: brightness(0) saturate(100%) invert(83%) sepia(33%) saturate(698%)
       hue-rotate(36deg) brightness(107%) contrast(101%);
+  }
+
+  :is(.service-card--black-white, .service-card--black-green) .learn-more__icon {
+    background-color: var(--color-white);
+  }
+  :is(.service-card--black-white, .service-card--black-green) .learn-more__icon svg {
+    filter: brightness(0) saturate(100%) invert(0%) sepia(5%) saturate(22%) hue-rotate(163deg) brightness(102%) contrast(104%);
   }
   
   .learn-more__icon--green-black {
