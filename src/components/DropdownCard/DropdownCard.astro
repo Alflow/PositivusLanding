@@ -3,12 +3,13 @@ const { cardNumber, title, link, content } = Astro.props;
 ---
 
 <div class="dropdown-card">
+  <input type="checkbox" id="dropdown-toggle" />
   <div class="dropdown-card__header">
     <div class="header__content">
       <span class="cardNumber">01</span>
       <h2>Consultation</h2>
     </div>
-    <input type="checkbox" id="dropdown-toggle" />
+    <label for="dropdown-toggle" class="dropdown-label"></label>
   </div>
   <div class="dropdown-card__body">
     <p>
@@ -27,19 +28,27 @@ const { cardNumber, title, link, content } = Astro.props;
     padding-inline: 60px;
     padding-block: 40px;
   }
+
+  #dropdown-toggle {
+    display: none;
+  }
+
   .dropdown-card__header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding-bottom: 30px;
   }
+
   .dropdown-card__header .header__content {
     display: flex;
     gap: 25px;
   }
+
   .dropdown-card__header .header__content .cardNumber {
     font-size: 60px;
   }
+
   .dropdown-card__header .header__content h2 {
     color: #000;
     font-size: 30px;
@@ -49,13 +58,52 @@ const { cardNumber, title, link, content } = Astro.props;
     display: flex;
     align-items: center;
   }
+
   .dropdown-card__body {
+    max-height: 0;
+    overflow: hidden;
     border-top: solid 1px var(--color-black);
-    padding-top: 30px;
+    padding-top: 0;
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: normal;
     color: var(--color-black);
+    transition:
+      max-height 0.3s ease,
+      padding-top 0.3s ease;
   }
+
+  #dropdown-toggle:checked ~ .dropdown-card__body {
+    max-height: 200px;
+    padding-top: 30px;
+  }
+
+  .dropdown-label {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    border: 1px solid #000;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    transition: transform 0.3s ease;
+    color: #000;
+    background-color: #fff;
+  }
+
+  .dropdown-label::before {
+    content: "+";
+    font-size: 44px;
+  }
+
+  #dropdown-toggle:checked + .dropdown-card__header .dropdown-label::before {
+    content: "-";
+  }
+
+  #dropdown-toggle:checked ~ .dropdown-card {
+  background-color: var(--color-gray-mid);
+}
 </style>
