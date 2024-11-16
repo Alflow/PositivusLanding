@@ -1,15 +1,14 @@
 ---
 import ServiceCard from "../Card/ServiceCard.astro";
+import SectionHeader from "../SectionHeader/SectionHeader.astro";
 ---
 
 <section class="services">
-  <div class="services__header">
-    <h1 class="label label--green">Services</h1>
-    <p>
-      At our digital marketing agency, we offer a range of services to help
-      businesses grow and succeed online. These services include:
-    </p>
-  </div>
+  <SectionHeader
+    title="Services"
+    text="At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include:"
+  />
+  
   <div class="services__content">
     <ServiceCard
       title="Search engine optimization"
@@ -53,7 +52,7 @@ import ServiceCard from "../Card/ServiceCard.astro";
 <style>
   .services {
     margin-top: 140px;
-    @media (max-width:767px) {
+    @media (max-width: 767px) {
       margin-top: 60px;
     }
   }

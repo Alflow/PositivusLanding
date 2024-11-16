@@ -1,0 +1,37 @@
+---
+const { title, text } = Astro.props;
+---
+
+<div class="section__header">
+  <h1 class="label label--green">{title}</h1>
+  <p>
+    {text}
+  </p>
+</div>
+
+<style>
+  .section__header {
+    display: flex;
+    justify-content: start;
+    gap: 40px;
+    align-items: center;
+    max-width: 700px;
+    margin-bottom: 80px;
+    margin-top: 140px;
+    @media (max-width: 767px) {
+      margin-top: 60px;
+      flex-direction: column;
+      text-align: center;
+      gap: 30px;
+      margin-bottom: 40px;
+    }
+  }
+  .section__header p {
+    text-wrap: balance;
+    max-width: 580px;
+    font-size: 18px;
+    @media (max-width:767px) {
+        font-size: 16px;
+    }
+  }
+</style>

@@ -53,7 +53,7 @@ const { cardNumber, title, text } = Astro.props;
     align-items: center;
   }
 
-  .dropdown-card__header .header__content .cardNumber {
+  .dropdown-card__header .cardNumber {
     font-size: 60px;
   }
 
@@ -67,11 +67,15 @@ const { cardNumber, title, text } = Astro.props;
   .dropdown-card__body {
     max-height: 0;
     overflow: hidden;
-    border-top: solid 1px var(--color-black);
     padding-top: 0;
     font-size: 18px;
     color: var(--color-black);
-    transition: max-height 0.3s ease, padding-top 0.3s ease;
+    transition:
+      max-height 0.3s ease,
+      padding-top 0.3s ease;
+  }
+  .dropdown-card__body.open {
+    border-top: solid 1px var(--color-black);
   }
 
   .dropdown-card__body.open {
@@ -101,5 +105,29 @@ const { cardNumber, title, text } = Astro.props;
 
   .dropdown-label.open::before {
     content: "-";
+  }
+  .dropdown-card:has(.open) {
+    background-color: var(--color-green);
+  }
+  @media (max-width: 767px) {
+    .dropdown-card {
+      background-color: var(--color-gray-mid);
+      border-radius: 45px;
+      padding-inline: 30px;
+      padding-block: 30px;
+      transition: background-color 0.3s ease;
+    }
+    .dropdown-card__header {
+      padding-bottom: 0;
+    }
+    .dropdown-card:has(.open) .dropdown-card__header {
+      padding-bottom: 20px;
+    }
+    .dropdown-card__header .header__content h2 {
+      font-size: 18px;
+    }
+    .dropdown-card .cardNumber {
+      font-size: 30px;
+    }
   }
 </style>

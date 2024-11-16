@@ -1,18 +1,15 @@
 ---
 // text cards content
 import { services } from "../../content/services";
-
 import DropdownCard from "../DropdownCard/DropdownCard.astro";
-const {title, subtitle } = Astro.props;
+import SectionHeader from "../SectionHeader/SectionHeader.astro";
 ---
 
 <section class="working-process">
-  <div class="working-process__header">
-    <h1 class="label label--green">{title}</h1>
-    <p>
-      {subtitle}
-    </p>
-  </div>
+  <SectionHeader
+    title="Our working process"
+    text=" Step-by-Step Guide to Achieving Your Business Goals "
+  />
   <div class="working-process__body">
     {services.map((service, index)=>(
       <DropdownCard
@@ -28,9 +25,7 @@ const {title, subtitle } = Astro.props;
   .working-process {
     background-color: var(--gray-dark);
   }
-  .working-process {
-    margin-top: 140px;
-  }
+  
   .working-process__header {
     display: flex;
     justify-content: start;
@@ -46,7 +41,6 @@ const {title, subtitle } = Astro.props;
     display: flex;
     flex-direction: column;
     gap: 30px;
-    margin-top: 80px;
   }
   
 </style>
