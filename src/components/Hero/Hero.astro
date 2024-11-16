@@ -2,6 +2,7 @@
   <div class="hero-wrapper">
     <div class="hero__container hero__container--left">
       <h1>Navigating the digital landscape for success</h1>
+      <img class="img img--mobile" src="/images/hero/hero_image.webp" alt="" />
       <p>
         Our digital marketing agency helps businesses grow and succeed online
         through a range of services including SEO, PPC, social media marketing,
@@ -10,16 +11,22 @@
       <a href="" class="btn btn--black">Book a consultation</a>
     </div>
     <div class="hero__container hero__container--right">
-      <img src="/images/hero/hero_image.webp" alt="" />
+      <img class="img img--desktop" src="/images/hero/hero_image.webp" alt="" />
     </div>
   </div>
   <div class="hero__companies">
-    <div class="company-logo"><img src="/images/hero/amazon.png" alt=""></div>
-    <div class="company-logo"><img src="/images/hero/dribbble.png" alt=""></div>
-    <div class="company-logo"><img src="/images/hero/hubspot.png" alt=""></div>
-    <div class="company-logo"><img src="/images/hero/netflix.png" alt=""></div>
-    <div class="company-logo"><img src="/images/hero/notion.png" alt=""></div>
-    <div class="company-logo"><img src="/images/hero/zoom.png" alt=""></div>
+    <div class="company-logo"><img src="/images/hero/amazon.png" alt="" /></div>
+    <div class="company-logo">
+      <img src="/images/hero/dribbble.png" alt="" />
+    </div>
+    <div class="company-logo">
+      <img src="/images/hero/hubspot.png" alt="" />
+    </div>
+    <div class="company-logo">
+      <img src="/images/hero/netflix.png" alt="" />
+    </div>
+    <div class="company-logo"><img src="/images/hero/notion.png" alt="" /></div>
+    <div class="company-logo"><img src="/images/hero/zoom.png" alt="" /></div>
   </div>
 </section>
 
@@ -32,8 +39,8 @@
     gap: 10px;
     justify-content: space-between;
   }
-  
-  .hero-wrapper{
+
+  .hero-wrapper {
     display: flex;
     justify-content: space-between;
     max-height: 515px;
@@ -45,15 +52,20 @@
     display: flex;
     aspect-ratio: 1;
   }
-  .hero__container--right img {
+  .hero__container--right .img {
     width: 100%;
     height: auto;
     object-fit: contain;
   }
-
+  .img--mobile {
+    display: none;
+  }
   .hero h1 {
     font-size: 60px;
     line-height: normal;
+    @media (max-width: 767px) {
+      font-size: 43px;
+    }
   }
   .hero h2 {
     font-size: 20px;
@@ -69,10 +81,15 @@
     gap: 30px;
     text-wrap: balance;
   }
-
+  .hero__container--left p {
+    font-size: 20px;
+    @media (max-width: 767px) {
+      font-size: 16px;
+    }
+  }
   .hero__companies {
     display: grid;
-    grid-template-columns: repeat( 6, 1fr);
+    grid-template-columns: repeat(6, 1fr);
     gap: 4rem;
   }
   .hero__companies .company-logo {
@@ -82,5 +99,32 @@
     width: 100%;
     height: auto;
     object-fit: cover;
+  }
+
+  @media (max-width: 767px) {
+    .hero-wrapper {
+      flex-direction: column;
+      max-height: fit-content;
+      margin-bottom: 30px;
+    }
+
+    .hero__container--right {
+      display: none;
+    }
+    .img--mobile {
+      display: block;
+      width: 100%;
+    }
+    .img--desktop {
+      display: none;
+    }
+    .btn {
+      width: 80%;
+      margin: 0 auto;
+    }
+    .hero__companies {
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: 5px;
+    }
   }
 </style>

@@ -5,6 +5,13 @@ body {
   font-family: "Space Grotesk", sans-serif;
 }
 
+body {
+  max-width: 1920px; /* Limita el ancho máximo del contenido */
+  margin: 0 auto; /* Centra el body horizontalmente */
+  width: 100%; /* Para que tome todo el ancho en pantallas pequeñas */
+  box-sizing: border-box; /* Incluye el padding y border en el tamaño total */
+}
+
 main {
   background-color: var(--color-white);
   color: var(--color-black);
@@ -12,6 +19,11 @@ main {
   padding-inline: 100px;
 }
 
+@media (max-width: 767px) {
+  main {
+    padding-inline: 20px;
+  }
+}
 .label {
   width: fit-content;
   padding-inline: 7px;
@@ -19,7 +31,11 @@ main {
   font-weight: 500px;
   font-size: 40px;
   border-radius: 7px;
+  @media (max-width: 767px) {
+    font-size: 26px;
+  }
 }
+
 .label--green {
   background-color: var(--color-green);
   color: var(--color-black);
@@ -37,7 +53,7 @@ main {
   width: fit-content;
   padding-inline: 35px;
   padding-block: 20px;
-  transition: all .2s ease-in-out;
+  transition: all 0.2s ease-in-out;
 }
 .btn:hover {
   scale: 1.08;

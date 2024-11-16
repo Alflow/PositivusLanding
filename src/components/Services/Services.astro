@@ -53,6 +53,9 @@ import ServiceCard from "../Card/ServiceCard.astro";
 <style>
   .services {
     margin-top: 140px;
+    @media (max-width:767px) {
+      margin-top: 60px;
+    }
   }
   .services__header {
     display: flex;
@@ -60,6 +63,10 @@ import ServiceCard from "../Card/ServiceCard.astro";
     gap: 40px;
     align-items: center;
     max-width: 700px;
+    @media (max-width: 767px) {
+      flex-direction: column;
+      text-align: center;
+    }
   }
   .services__header p {
     text-wrap: balance;
@@ -68,7 +75,14 @@ import ServiceCard from "../Card/ServiceCard.astro";
   .services__content {
     margin-top: 80px;
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    display: grid;
+    grid-template-columns: repeat(2, minmax(200px, 1fr)); /* Wrap dinámico */
     gap: 40px;
+  }
+
+  @media (max-width: 769px) {
+    .services__content {
+      grid-template-columns: repeat(1, 1fr);
+    }
   }
 </style>

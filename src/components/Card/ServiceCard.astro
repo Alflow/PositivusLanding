@@ -11,9 +11,7 @@ const cardClass = colorScheme ? `${colorScheme}` : "card-default";
       {title}
     </h3>
     <a href={link} class="learn-more">
-      <div
-        class="learn-more__icon learn-more__icon--arrow"
-      >
+      <div class="learn-more__icon learn-more__icon--arrow">
         <svg
           xmlns="http://www.w3.org/2000/svg"
           width="1em"
@@ -31,7 +29,7 @@ const cardClass = colorScheme ? `${colorScheme}` : "card-default";
   </div>
 </div>
 
-<style>
+<style is:global>
   .service-card {
     display: flex;
     padding-block: 50px;
@@ -39,8 +37,8 @@ const cardClass = colorScheme ? `${colorScheme}` : "card-default";
     border-radius: 50px;
     border: solid 2px black;
     box-shadow: black 2px 3px;
-    gap: 1rem
- }
+    gap: 1rem;
+  }
   .service-card:hover {
     box-shadow: black 2px 6px;
     transition: all 0.2s ease-in-out;
@@ -49,14 +47,18 @@ const cardClass = colorScheme ? `${colorScheme}` : "card-default";
     background-color: var(--color-white);
     color: var(--color-black);
   }
-  .service-card--white-green .label {
+  .service-card--white-green .label .word {
+    border-radius: 8px;
+    padding: 3px;
     background-color: var(--color-green);
   }
   .service-card--black-green {
     background-color: var(--color-black);
     color: var(--color-white);
   }
-  .service-card--black-green .label {
+  .service-card--black-green .label .word {
+    border-radius: 8px;
+    padding: 3px;
     background-color: var(--color-green);
     color: var(--color-black);
   }
@@ -64,20 +66,27 @@ const cardClass = colorScheme ? `${colorScheme}` : "card-default";
     background-color: var(--color-green);
     color: var(--color-black);
   }
-  .service-card--green-white .label {
+  .service-card--green-white .label .word {
+    border-radius: 8px;
+    padding: 3px;
     background-color: var(--color-white);
   }
   .service-card--black-white {
     background-color: var(--color-black);
     color: var(--color-white);
   }
-  .service-card--black-white .label {
+  .service-card--black-white .label .word {
+    border-radius: 8px;
+    padding: 3px;
     background-color: var(--color-white);
     color: var(--color-black);
   }
 
   .service-card h3 {
     text-wrap: balance;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4px;
   }
   .service-card__content {
     width: 60%;
@@ -93,7 +102,6 @@ const cardClass = colorScheme ? `${colorScheme}` : "card-default";
     width: 100%;
     height: auto;
     object-fit: contain;
-    
   }
   .learn-more {
     font-size: 20px;
@@ -116,22 +124,29 @@ const cardClass = colorScheme ? `${colorScheme}` : "card-default";
     text-align: center;
   }
 
-  :is(.service-card--white-green, .service-card--green-white) .learn-more__icon{
+  :is(.service-card--white-green, .service-card--green-white)
+    .learn-more__icon {
     background-color: var(--color-black);
   }
-  
-  :is(.service-card--white-green, .service-card--green-white) .learn-more__icon svg {
+
+  :is(.service-card--white-green, .service-card--green-white)
+    .learn-more__icon
+    svg {
     filter: brightness(0) saturate(100%) invert(83%) sepia(33%) saturate(698%)
       hue-rotate(36deg) brightness(107%) contrast(101%);
   }
 
-  :is(.service-card--black-white, .service-card--black-green) .learn-more__icon {
+  :is(.service-card--black-white, .service-card--black-green)
+    .learn-more__icon {
     background-color: var(--color-white);
   }
-  :is(.service-card--black-white, .service-card--black-green) .learn-more__icon svg {
-    filter: brightness(0) saturate(100%) invert(0%) sepia(5%) saturate(22%) hue-rotate(163deg) brightness(102%) contrast(104%);
+  :is(.service-card--black-white, .service-card--black-green)
+    .learn-more__icon
+    svg {
+    filter: brightness(0) saturate(100%) invert(0%) sepia(5%) saturate(22%)
+      hue-rotate(163deg) brightness(102%) contrast(104%);
   }
-  
+
   .learn-more__icon--green-black {
     background-color: var(--color-green);
   }
@@ -160,4 +175,33 @@ const cardClass = colorScheme ? `${colorScheme}` : "card-default";
     filter: brightness(0) saturate(100%) invert(0%) sepia(100%) saturate(31%)
       hue-rotate(149deg) brightness(91%) contrast(107%);
   }
+  @media (max-width: 767px) {
+    .service-card {
+      flex-wrap: wrap;
+      position: relative;
+    }
+    .service-card__content {
+      width: 100%;
+    }
+    .learn-more {
+      position: absolute;
+      bottom: 50px;
+    }
+    .learn-more span {
+      display: none;
+    }
+    .service-img {
+      margin-left: auto;
+      width: 60%;
+    }
+  }
 </style>
+
+<script>
+document.querySelectorAll("h3").forEach((h3) => {
+  const words = h3.textContent.trim().split(" ").filter(word => word !== ""); // Elimina espacios adicionales
+  h3.innerHTML = words
+    .map((word) => `<span class="word">${word}</span>`)
+    .join(" "); // Une las palabras con un espacio
+});
+</script>
