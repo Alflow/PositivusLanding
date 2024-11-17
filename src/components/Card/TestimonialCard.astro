@@ -1,0 +1,55 @@
+---
+const { testimony, name, job } = Astro.props;
+---
+
+<div class="testimonial-card">
+  <div class="testimonial-card__testimony">
+    "{testimony}"
+  </div>
+  <div class="testimonial-card__person">
+    <p class="person-name">{name}</p>
+    <p class="person-job">{job}</p>
+  </div>
+</div>
+
+<style>
+  /* Caja de testimonio con borde y triángulo */
+  .testimonial-card__testimony {
+    position: relative; /* Necesario para el ::after */
+    border: solid 1px var(--color-green);
+    border-radius: 45px;
+    padding-block: 48px;
+    padding-inline: 52px;
+  }
+
+  /* Pico del testimonio */
+  .testimonial-card__testimony::after {
+    content: "";
+    position: absolute;
+    bottom: -10px; /* Ajusta para colocar el pico */
+    left: 50px; /* Ajusta según la posición deseada */
+    width: 0;
+    height: 0;
+    border-left: 10px solid transparent; /* Lado izquierdo transparente */
+    border-right: 10px solid transparent; /* Lado derecho transparente */
+    border-top: 10px solid var(--color-green); /* Solo el borde superior */
+    background: none; /* Sin relleno */
+    box-sizing: border-box; /* Asegura que los bordes se rendericen correctamente */
+  }
+  .testimonial-card__person {
+    padding-left: 2rem;
+  }
+  .testimonial-card__person .person-name {
+    font-weight: bold;
+    color: var(--color-green);
+    margin-top: 40px;
+  }
+
+  /* Responsivo */
+  @media (max-width: 767px) {
+    .testimonial-card {
+      padding-block: 30px;
+      padding-inline: 30px;
+    }
+  }
+</style>

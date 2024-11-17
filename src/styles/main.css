@@ -18,6 +18,7 @@ main {
   /* para que no se desborde nada */
   padding-inline: 100px;
   overflow: hidden;
+  padding-block-end: 80px;
 }
 
 @media (max-width: 767px) {

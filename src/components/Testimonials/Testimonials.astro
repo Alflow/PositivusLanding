@@ -1,0 +1,159 @@
+---
+import { testimonials } from "../../content/testimonials";
+import TestimonialCard from "../Card/TestimonialCard.astro";
+import SectionHeader from "../SectionHeader/SectionHeader.astro";
+
+// Tiny Slider Configuración
+const tinySliderScript = "/js/tiny-slider.js";
+const tinySliderStyles = "/css/tiny-slider.css";
+---
+
+<section id="testimonials">
+  <SectionHeader
+    title="Testimonials"
+    text="Hear from Our Satisfied Clients: Read Our Testimonials to Learn More about Our Digital Marketing Services"
+  />
+  <div class="testimonials__slider" id="testimonial-slider">
+    {
+      testimonials.map((item) => (
+        <TestimonialCard
+          testimony={item.testimony}
+          name={item.name}
+          job={item.job}
+        />
+      ))
+    }
+  </div>
+</section>
+<style is:global>
+  /* Estilos generales del slider */
+  .testimonials__slider {
+    color: var(--color-white);
+    padding-block-start: 84px;
+    padding-block-end: 40px;
+    position: relative; /* Necesario para posicionar las flechas y navegación */
+  }
+
+  /* Botones de control (flechas) */
+  .tns-controls {
+    position: absolute;
+    top: 50%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    transform: translateY(-50%);
+    pointer-events: none;
+  }
+  .tns-controls [data-controls="prev"],
+  .tns-controls [data-controls="next"] {
+    pointer-events: auto;
+    background: var(--color-gray-dark); /* Fondo oscuro */
+    color: var(--color-white);
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition:
+      background-color 0.3s ease,
+      transform 0.3s ease;
+  }
+  .tns-controls [data-controls="prev"]:hover,
+  .tns-controls [data-controls="next"]:hover {
+    background: var(--color-green);
+    transform: scale(1.1);
+  }
+</style>
+<style is:global>
+  #testimonials .tns-outer {
+    border-radius: 45px !important;
+    overflow: hidden !important;
+    background-color: var(--color-blue-dark);
+    position: relative;
+    padding-inline-start: 1rem !important;
+  }
+  .tns-nav {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    position: absolute;
+    bottom: 20px;
+    width: 100%;
+  }
+  .tns-controls [data-controls="prev"]::before {
+    display: none;
+  }
+  .tns-controls [data-controls="next"]::before {
+    display: none;
+  }
+  /* Navegación (cuadrados) */
+  .tns-nav {
+    margin-top: 20px;
+    text-align: center;
+  }
+  .tns-nav [aria-controls] {
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    margin: 0 8px;
+    background-color: var(--color-gray-light);
+    cursor: pointer;
+    transition:
+      background-color 0.3s ease,
+      transform 0.3s ease;
+  }
+  .tns-nav [aria-controls]:hover {
+    transform: scale(1.2);
+  }
+  .tns-nav [aria-controls].tns-nav-active {
+    background-color: var(--color-green);
+  }
+  @media (max-width: 768px) {
+    .tns-nav [aria-controls] {
+      width: 10px;
+      height: 10px;
+    }
+    .tns-controls [data-controls="prev"],
+    .tns-controls [data-controls="next"] {
+      width: 30px;
+      height: 30px;
+      display: none;
+    }
+  }
+  .tns-controls {
+    display: none !important;
+  }
+</style>
+<script src={tinySliderScript} defer></script>
+<link rel="stylesheet" href={tinySliderStyles} />
+<script is:inline>
+  document.addEventListener("DOMContentLoaded", function () {
+    tns({
+      container: "#testimonial-slider",
+      items: 1.2,
+      autoplay: false,
+      controls: true, // Muestra las flechas
+      nav: true, // Muestra los indicadores cuadrados
+      autoplayTimeout: 5000,
+      speed: 400,
+      mouseDrag: true,
+      gutter: 20,
+      navPosition: "bottom",
+      controlsPosition: "bottom",
+      responsive: {
+        1024: {
+          items: 2.3,
+          gutter: 20,
+        },
+        1920: {
+          items: 3.3,
+          gutter: 30,
+        },
+      },
+    });
+  });
+</script>
