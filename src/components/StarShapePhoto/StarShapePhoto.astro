@@ -1,0 +1,33 @@
+---
+const { img } = Astro.props;
+---
+
+<div class="star-photo">
+  <div class="profile-pic" style={`background-image: url(${img});`}></div>
+</div>
+
+<style>
+  .star-photo {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .profile-pic {
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    clip-path: path(
+      "M84.631 48.9117C117.473 86.3213 87.1455 116.649 49.7359 83.8068C12.3263 116.649 -18.0016 86.3213 14.8408 48.9117C-18.0016 11.5021 12.3263 -18.8258 49.7359 14.0166C87.1455 -18.8258 117.473 11.5021 84.631 48.9117Z"
+    );
+    -webkit-clip-path: path(
+      "M84.631 48.9117C117.473 86.3213 87.1455 116.649 49.7359 83.8068C12.3263 116.649 -18.0016 86.3213 14.8408 48.9117C-18.0016 11.5021 12.3263 -18.8258 49.7359 14.0166C87.1455 -18.8258 117.473 11.5021 84.631 48.9117Z"
+    );
+    background-color: #b9ff66;
+  }
+</style>

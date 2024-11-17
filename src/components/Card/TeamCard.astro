@@ -1,0 +1,123 @@
+---
+import StarShapePhoto from "../StarShapePhoto/StarShapePhoto.astro";
+
+const { name, job, img, linkedinUrl, text } = Astro.props;
+---
+
+<div class="team-card">
+  <a class="linkedin-btn" href={linkedinUrl}>
+    <img src="/images/team/linkedinBtn.svg" alt="" />
+  </a>
+  <div class="team-card__header">
+    <div class="header__img">
+      <StarShapePhoto img={img} />
+    </div>
+    <div class="header-info">
+      <h4>{name}</h4>
+      <p>{job}</p>
+    </div>
+  </div>
+  <div class="team-card__body">
+    <p>
+      {text}
+    </p>
+  </div>
+</div>
+
+<style>
+  .team-card {
+    padding-block: 40px;
+    padding-inline: 35px;
+    position: relative;
+    border-radius: 50px;
+    border: solid 2px black;
+    box-shadow: black 2px 3px;
+    height: auto;
+    transition: all 0.8s ease-in-out;
+  }
+  .team-card:hover {
+    box-shadow: black 4px 6px;
+  }
+  .team-card__header {
+    display: flex;
+    gap: 20px;
+    padding-bottom: 28px;
+    border-bottom: 1px solid black;
+  }
+  .team-card__header h4 {
+    font-size: 20px;
+    font-weight: 600;
+  }
+  .team-card .header__img {
+    width: 100px;
+    display: flex;
+    aspect-ratio: 1;
+    filter: drop-shadow(3px 3px black);
+  }
+  .team-card .header__img .star-photo {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    background-image: url("/");
+  }
+  .team-card .team-card__header .header-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+  }
+  .team-card .team-card__header .header-info p {
+    font-size: 18px;
+  }
+  .team-card__body {
+    margin-top: 28px;
+  }
+  .team-card__body p {
+    font-size: 18px;
+  }
+  .linkedin-btn {
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    transition: all 0.3s ease-in-out;
+  }
+  .linkedin-btn:hover {
+    scale: 1.1;
+  }
+
+  @media (max-width: 767px) {
+    .team-card__header {
+      padding-bottom: 20px;
+    }
+    .team-card__header h4 {
+      font-size: 18px;
+    }
+    .team-card .team-card__header .header-info p {
+      font-size: 16px;
+    }
+    .team-card__body {
+      margin-top: 20px;
+    }
+    .team-card__body p {
+      font-size: 16px;
+    }
+    .linkedin-btn {
+      right: 30px;
+      top: 20px;
+    }
+  }
+  @media (max-width: 375px) {
+    .team-card .header__img {
+      width: 60px;
+    }
+  }
+  @media (max-width: 320px) {
+    .team-card .header__img {
+      margin-top: 1.2rem;
+      width: 60px;
+    }
+    .linkedin-btn {
+      right: 30px;
+      top: 20px;
+    }
+  }
+</style>

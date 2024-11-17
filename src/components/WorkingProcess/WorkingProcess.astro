@@ -1,6 +1,6 @@
 ---
 // text cards content
-import { services } from "../../content/services";
+import { workingProcess } from "../../content/workingProcess";
 import DropdownCard from "../DropdownCard/DropdownCard.astro";
 import SectionHeader from "../SectionHeader/SectionHeader.astro";
 ---
@@ -11,13 +11,12 @@ import SectionHeader from "../SectionHeader/SectionHeader.astro";
     text=" Step-by-Step Guide to Achieving Your Business Goals "
   />
   <div class="working-process__body">
-    {services.map((service, index)=>(
+    {workingProcess.map((item, index)=>(
       <DropdownCard
       cardNumber={index + 1}
-      title={service.title}
-      text={service.text}
+      title={item.title}
+      text={item.text}
       />
-
     ))}
   </div>
 </section>

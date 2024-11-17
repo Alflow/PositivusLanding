@@ -125,9 +125,18 @@ const { cardNumber, title, text } = Astro.props;
     }
     .dropdown-card__header .header__content h2 {
       font-size: 18px;
+      max-width: 78%;
+
     }
     .dropdown-card .cardNumber {
       font-size: 30px;
+    }
+    .dropdown-label {
+      height: 20px;
+      width: 20px;
+    }
+    .dropdown-label::before {
+      font-size: 20px;
     }
   }
 </style>

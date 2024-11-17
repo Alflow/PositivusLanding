@@ -17,6 +17,7 @@ main {
   color: var(--color-black);
   /* para que no se desborde nada */
   padding-inline: 100px;
+  overflow: hidden;
 }
 
 @media (max-width: 767px) {
