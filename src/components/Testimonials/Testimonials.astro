@@ -24,136 +24,143 @@ const tinySliderStyles = "/css/tiny-slider.css";
       ))
     }
   </div>
+  <!-- Controles personalizados -->
+  <div class="custom-nav">
+    {
+      testimonials.map((_, index) => (
+        <div class="custom-nav-item" data-slide={index} />
+      ))
+    }
+  </div>
 </section>
+
 <style is:global>
+  .tns-outer {
+    background-color: var(--color-blue-dark);
+    border-top-left-radius: 45px;
+    border-top-right-radius: 45px;
+  }
+  .tns-inner {
+    padding-inline: 1rem;
+  }
   /* Estilos generales del slider */
   .testimonials__slider {
     color: var(--color-white);
     padding-block-start: 84px;
     padding-block-end: 40px;
-    position: relative; /* Necesario para posicionar las flechas y navegación */
+    position: relative;
   }
 
-  /* Botones de control (flechas) */
-  .tns-controls {
-    position: absolute;
-    top: 50%;
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    transform: translateY(-50%);
-    pointer-events: none;
-  }
-  .tns-controls [data-controls="prev"],
-  .tns-controls [data-controls="next"] {
-    pointer-events: auto;
-    background: var(--color-gray-dark); /* Fondo oscuro */
-    color: var(--color-white);
-    border: none;
-    width: 40px;
-    height: 40px;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    cursor: pointer;
-    transition:
-      background-color 0.3s ease,
-      transform 0.3s ease;
-  }
-  .tns-controls [data-controls="prev"]:hover,
-  .tns-controls [data-controls="next"]:hover {
-    background: var(--color-green);
-    transform: scale(1.1);
-  }
-</style>
-<style is:global>
-  #testimonials .tns-outer {
-    border-radius: 45px !important;
-    overflow: hidden !important;
-    background-color: var(--color-blue-dark);
-    position: relative;
-    padding-inline-start: 1rem !important;
-  }
-  .tns-nav {
+  /* Navegación personalizada */
+  .custom-nav {
     display: flex;
     justify-content: center;
     gap: 1rem;
-    position: absolute;
-    bottom: 20px;
-    width: 100%;
+    position: relative;
+    z-index: 10;
+    background-color: var(--color-blue-dark);
+    border-bottom-left-radius: 45px;
+    border-bottom-right-radius: 45px;
+    padding-bottom: 2rem;
   }
-  .tns-controls [data-controls="prev"]::before {
-    display: none;
-  }
-  .tns-controls [data-controls="next"]::before {
-    display: none;
-  }
-  /* Navegación (cuadrados) */
-  .tns-nav {
-    margin-top: 20px;
-    text-align: center;
-  }
-  .tns-nav [aria-controls] {
-    display: inline-block;
-    width: 12px;
+
+  .custom-nav-item {
+    width: 12px; /* Tamaño ajustable */
     height: 12px;
-    margin: 0 8px;
     background-color: var(--color-gray-light);
+    border-radius: 50%; /* Hace los elementos redondos */
     cursor: pointer;
     transition:
       background-color 0.3s ease,
       transform 0.3s ease;
   }
-  .tns-nav [aria-controls]:hover {
+
+  .custom-nav-item:hover {
     transform: scale(1.2);
   }
-  .tns-nav [aria-controls].tns-nav-active {
+
+  .custom-nav-item.active {
     background-color: var(--color-green);
   }
+  .testimonial-card__testimony:active {
+    cursor: grabbing;
+  }
   @media (max-width: 768px) {
-    .tns-nav [aria-controls] {
+    .custom-nav-item {
       width: 10px;
       height: 10px;
     }
-    .tns-controls [data-controls="prev"],
-    .tns-controls [data-controls="next"] {
-      width: 30px;
-      height: 30px;
-      display: none;
+    .testimonial-card__testimony {
+      padding-inline: 20px !important;
+      padding-block: 20px !important;
+    }
+    .tns-inner {
+      padding-inline: 2px !important;
     }
   }
-  .tns-controls {
-    display: none !important;
-  }
 </style>
+
 <script src={tinySliderScript} defer></script>
 <link rel="stylesheet" href={tinySliderStyles} />
+
 <script is:inline>
-  document.addEventListener("DOMContentLoaded", function () {
-    tns({
-      container: "#testimonial-slider",
-      items: 1.2,
-      autoplay: false,
-      controls: true, // Muestra las flechas
-      nav: true, // Muestra los indicadores cuadrados
-      autoplayTimeout: 5000,
-      speed: 400,
-      mouseDrag: true,
-      gutter: 20,
-      navPosition: "bottom",
-      controlsPosition: "bottom",
-      responsive: {
-        1024: {
-          items: 2.3,
-          gutter: 20,
-        },
-        1920: {
-          items: 3.3,
-          gutter: 30,
-        },
+ document.addEventListener("DOMContentLoaded", function () {
+  // Inicializar el slider
+  const slider = tns({
+    container: "#testimonial-slider",
+    items: 1.2,
+    autoplay: false,
+    controls: false,
+    nav: false,
+    speed: 400,
+    mouseDrag: true,
+    gutter: 10,
+    responsive: {
+      1024: {
+        items: 2.3,
+        gutter: 20,
       },
+      1920: {
+        items: 3.3,
+        gutter: 30,
+      },
+    },
+  });
+
+  // Obtener referencias a los controles personalizados
+  const customNavItems = document.querySelectorAll(".custom-nav-item");
+  console.log("Custom nav items found:", customNavItems.length);
+
+  if (customNavItems.length === 0) {
+    console.error("No custom navigation items found. Check your HTML.");
+    return;
+  }
+
+  // Marcar el primer control como activo inicialmente
+  customNavItems[0]?.classList.add("active");
+
+  // Sincronizar el slider con los controles personalizados
+  slider.events.on("indexChanged", (info) => {
+    const currentIndex = info.displayIndex - 1; // Ajustar el índice al rango de los elementos personalizados
+    console.log("Slider index changed to:", currentIndex); // Depuración
+
+    customNavItems.forEach((item, index) => {
+      if (index === currentIndex) {
+        item.classList.add("active");
+      } else {
+        item.classList.remove("active");
+      }
     });
   });
+
+  // Asignar funcionalidad a los controles personalizados
+  customNavItems.forEach((item, index) => {
+    console.log(`Adding click event to nav item ${index}`);
+    item.addEventListener("click", () => {
+      console.log("Clicked nav index:", index); // Depuración
+      slider.goTo(index); // Navegar al índice correspondiente
+    });
+  });
+});
+
 </script>
