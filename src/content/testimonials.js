@@ -1,10 +1,5 @@
 export const testimonials = [
-  {
-    testimony:
-      "We have been working with alflowsitus for the past year and have seen a significant increase in website traffic and leads as a result of their efforts. The team is professional, responsive, and truly cares about the success of our business. We highly recommend alflowsitus to any company looking to grow their online presence.",
-    name: "John Smith",
-    job: "Marketing Director at XYZ Corp",
-  },
+ 
   {
     testimony:
       "alflowsitus has completely transformed our digital marketing strategy. Their insights and execution have been phenomenal, leading to a substantial boost in our customer engagement and online conversions.",
