@@ -24,6 +24,7 @@ main {
   overflow: hidden;
   padding-block-start: 90px;
   padding-block-end: 80px;
+  overflow: hidden;
 }
 
 @media (max-width: 767px) {
