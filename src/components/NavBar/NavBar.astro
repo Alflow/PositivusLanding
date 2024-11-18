@@ -1,61 +1,205 @@
+---
+
+---
+
 <nav class="nav">
   <div class="nav__logo">
-    <img src="/images/logos/positivus_logo.webp" alt="">
+    <img src="/images/logos/positivus_logo.webp" alt="Logo Positivus" />
   </div>
   <div class="nav__menu">
-    <a href="" class="nav__menu-item">About Us</a>
-    <a href="" class="nav__menu-item">Services</a>
-    <a href="" class="nav__menu-item">Use Cases</a>
-    <a href="" class="nav__menu-item">Pricing</a>
-    <a href="" class="nav__menu-item">Blog</a>
-    <a href="" class="btn">Request a quote</a>
+    <a href="#about" class="nav__menu-item">About Us</a>
+    <a href="#services" class="nav__menu-item">Services</a>
+    <a href="#use-cases" class="nav__menu-item">Use Cases</a>
+    <a href="#pricing" class="nav__menu-item">Pricing</a>
+    <a href="/blog" class="nav__menu-item">Blog</a>
   </div>
+  <!-- Botón Hamburguesa -->
+  <div role="button" class="hamburger hamburger--arrow" id="menu-btn">
+    <div class="hamburger-box">
+      <div class="hamburger-inner"></div>
+    </div>
+  </div>
+
 </nav>
+
+<!-- Sidenav -->
+<div id="sidenav" class="sidenav">
+  <div class="sidenav-links-container">
+    <a href="#about" class="sidenav-link">About Us</a>
+    <a href="#services" class="sidenav-link">Services</a>
+    <a href="#use-cases" class="sidenav-link">Use Cases</a>
+    <a href="#pricing" class="sidenav-link">Pricing</a>
+    <a href="/blog" class="sidenav-link">Blog</a>
+  </div>
+</div>
+
 <style>
-    nav{
-        display: flex;
-        align-items: center;
-        padding-inline : 100px;
-        justify-content: space-between;
-        font-size: 20px;
-        padding-top: 30px;
-    }
+  /* Navegación principal */
+  .nav {
+    position: fixed;
+    left: 0;
+    top: 0;
+    border-bottom: 2px solid var(--color-black);
+    background-color: var(--color-white);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 90px;
+    z-index: 999;
 
-    .nav__logo{
-        max-width: 220px;
-        max-height: 36px;
-        display: flex;
-    }
+  }
+  .nav {
+  box-sizing: border-box;
+  padding-inline: 100px; /* Mantén el espacio interno */
+  width: 100%; /* Ahora no se desbordará */
+}
 
-    .nav__logo img{
-        width: 100%;
-        height: auto;
-        object-fit: cover;
-    }
+  .nav__logo img {
+    max-width: 138px;
+    height: auto;
+  }
 
-    .nav__menu {
-        display: flex;
-        gap: 40px; 
-    }
+  .nav__menu {
+    display: flex;
+    gap: 20px;
+  }
 
-    .nav__menu-item{
-        display: flex;
-        align-items: center;
-    }
-    .nav__menu-item:last-child{
-        border: solid 1px;
-        border-radius: 14px;
-    }
+  .nav__menu-item {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    transition: color 0.3s;
+    font-size: 18px
+  }
+
+  .nav__menu-item:hover {
+    color: var(--color-green);
+  }
+
+  .btn {
+    border: 1px solid #333;
+    border-radius: 8px;
+    font-weight: bold;
+    transition: all 0.3s;
+  }
+
+  .btn:hover {
+    background-color: var(--color-green);
+    color: #fff;
+  }
+
+  /* Botón Hamburguesa */
+  .menu-btn {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+  }
+
+  /* Sidenav */
+  .sidenav {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background-color: var(--color-white);
+    color: var(--color-black);
+    flex-direction: column;
+    align-items: start;
+    transition: transform 0.3s ease;
+    z-index: 20;
+    margin-top: 90px;
     
-    .nav__menu a:hover {
-        text-decoration: underline;
-        text-underline-offset: 4px;
+  }
+
+  .sidenav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 32px;
+    margin: 10px 0;
+    transition: color 0.3s;
+    border-bottom: solid 1px white;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    width: 100%;
+    color: inherit;
+  }
+  .sidenav a:hover {
+    color: var(--color-green);
+  }
+
+  .sidenav a:hover {
+    color: var(--color-green);
+  }
+
+  .sidenav .btn {
+    margin-top: 20px;
+  }
+
+  .sidenav-links-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+  }
+  .sidenav-link {
+    text-align: center;
+  }
+  .hamburger {
+    display: none;
+  }
+  .hamburger.hamburger--arrow {
+    transform: scale(.75);
+  }
+
+  /* Estilos responsivos */
+  @media (max-width: 768px) {
+    .nav {
+      padding-inline-start: 30px;
+      padding-inline-end: 30px;
+    }
+    .nav__menu {
+      display: none;
     }
 
-    .nav__menu .btn{
-        border: solid 1px var(--color-black);
-        padding-inline: 35px;
-        padding-block: 20px;
+    .menu-btn {
+      display: block;
     }
-
+    .sidenav {
+      display: flex;
+    }
+    .hamburger {
+      display: flex;
+    }
+  }
 </style>
+
+<script>
+  const menuBtn = document.getElementById("menu-btn");
+  const sidenav = document.getElementById("sidenav");
+
+  menuBtn.addEventListener("click", () => {
+    const isActive = sidenav.style.transform === "translateX(100%)";
+
+    if (isActive) {
+      sidenav.style.transform = "translateX(-100%)"; // Cierra el menú
+      menuBtn.classList.remove("is-active");
+    } else {
+      sidenav.style.transform = "translateX(100%)"; // Abre el menú
+      menuBtn.classList.add("is-active");
+    }
+  });
+
+  // Cerrar el sidenav al hacer clic en un enlace
+  const sidenavLinks = document.querySelectorAll(".sidenav a");
+  sidenavLinks.forEach((link) => {
+    link.addEventListener("click", () => {
+      sidenav.style.transform = "translateX(-100%)";
+      menuBtn.classList.remove("is-active");
+    });
+  });
+</script>

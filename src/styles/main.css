@@ -1,6 +1,10 @@
 @import "./reset.css";
 @import "./variables.css";
 
+/* TODO: REMOVE */
+.border {
+  border: solid 1px red !important;
+}
 body {
   font-family: "Space Grotesk", sans-serif;
 }
@@ -18,12 +22,14 @@ main {
   /* para que no se desborde nada */
   padding-inline: 100px;
   overflow: hidden;
+  padding-block-start: 90px;
   padding-block-end: 80px;
 }
 
 @media (max-width: 767px) {
   main {
     padding-inline: 20px;
+    padding-top: 90px;
   }
 }
 .label {

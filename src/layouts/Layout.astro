@@ -19,6 +19,7 @@ const { title } = Astro.props;
     <title>{title}</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="/css/hamburgers.css">
     <link
       href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&display=swap"
       rel="stylesheet"
@@ -26,8 +27,7 @@ const { title } = Astro.props;
     <meta name="robots" content="noindex">
   </head>
   <body>
-    <!-- TODO: RESPONSIVE NAVBAR -->
-    <!-- <NavBar></NavBar> -->
+    <NavBar />
     <main>
       <slot />
     </main>
