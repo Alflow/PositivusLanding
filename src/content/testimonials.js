@@ -1,33 +1,44 @@
 export const testimonials = [
- 
   {
     testimony:
-      "alflowsitus has completely transformed our digital marketing strategy. Their insights and execution have been phenomenal, leading to a substantial boost in our customer engagement and online conversions.",
-    name: "Jane Doe",
-    job: "CEO of Acme Co.",
+      "Gracias a Alflowsitus, tenemos una web moderna y un CMS que nos permite gestionar contenido fácilmente. Su modelo de IA personalizado también ha mejorado nuestra productividad.",
+    name: "Laura Martínez",
+    job: "Gerente de Innovación en TecPro",
   },
   {
     testimony:
-      "Working with alflowsitus has been a game-changer for our company. Their data-driven approach and commitment to excellence have delivered incredible results, helping us achieve our goals faster than expected.",
-    name: "Emily Johnson",
-    job: "Head of Sales at BrightTech",
+      "El servicio de locución con IA es simplemente espectacular. La voz suena tan real que nadie puede notar la diferencia.",
+    name: "Luis Fernández",
+    job: "Director de Marketing en Publicis",
   },
   {
     testimony:
-      "I was impressed by the level of expertise and professionalism alflowsitus brought to the table. They truly understand the challenges businesses face in the digital landscape and know how to overcome them.",
-    name: "Michael Brown",
-    job: "Operations Manager at GreenLeaf",
+      "Alflowsitus transformó nuestro proyecto digital con soluciones rápidas y eficaces. Su equipo es muy profesional y creativo.",
+    name: "María García",
+    job: "CEO de CreativUp",
   },
   {
     testimony:
-      "The alflowsitus team exceeded all my expectations. Their creativity, attention to detail, and innovative solutions have made a huge impact on our branding and customer acquisition efforts.",
-    name: "Sophia Davis",
-    job: "Creative Director at FreshIdeas",
+      "La nueva web que crearon con Astro es increíblemente rápida. La velocidad de carga ha mejorado la experiencia del usuario y ha reducido nuestra tasa de rebote significativamente.",
+    name: "Javier López",
+    job: "Gerente de Operaciones en SpeedUp",
   },
   {
     testimony:
-      "Thanks to alflowsitus, our company has achieved a new level of success online. Their strategies are not only effective but also sustainable, ensuring long-term growth for our business.",
-    name: "David Wilson",
-    job: "Product Manager at NextGen",
+      "Nunca pensé que una web pudiera cargar tan rápido. Alflowsitus ha optimizado nuestro sitio al máximo, y ahora los clientes navegan sin interrupciones.",
+    name: "Andrea Ramírez",
+    job: "Responsable de E-commerce en QuickShop",
+  },
+  {
+    testimony:
+      "El equipo de Alflowsitus entendió nuestras necesidades a la perfección. La integración del CMS y la velocidad de la web con Astro nos han ahorrado horas de trabajo y mejorado nuestra presencia online.",
+    name: "Roberto García",
+    job: "Fundador de Digital Boost",
+  },
+  {
+    testimony:
+      "Nos sorprendió la rapidez con la que Alflowsitus entregó nuestro proyecto. Además, el rendimiento de la web es espectacular, algo que nunca habíamos experimentado antes.",
+    name: "Carolina Pérez",
+    job: "CEO de Smart Solutions",
   },
 ];

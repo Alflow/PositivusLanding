@@ -1,14 +1,17 @@
+---
+import { proposalData } from "../../content/proposal.js";
+---
+
 <section class="free-proposal">
   <div class="free-proposal__content">
-    <h2>Let's make things happen</h2>
-    <p>
-      Contact us today to learn more about how our digital marketing services
-      can help your business grow and succeed online.
-    </p>
-    <a href="" class="btn btn--black">Get your free proposal</a>
+    <h2>{proposalData.title}</h2>
+    <p>{proposalData.text}</p>
+    <a href={proposalData.buttonUrl} class="btn btn--black">
+      {proposalData.buttonText}
+    </a>
   </div>
   <div class="free-proposal__img">
-    <img src="/images/freeproposal/freeproposal.png" alt="" />
+    <img src={proposalData.image.src} alt={proposalData.image.alt} />
   </div>
 </section>
 

@@ -1,44 +1,49 @@
+export const teamHeader = {
+  title: 'Nuestro equipo',
+  text: 'Conoce a nuestro magnífico equipo de personas increíbles.'
+}
+
 export const team = [
   {
-    name: "John Smith",
-    job: "CEO and Founder",
+    name: "Alflow Sito",
+    job: "Fundador y CEO",
     img: "images/team/john-smith.webp",
     linkedinUrl: "https://www.linkedin.com/in/johnsmith",
-    text: "10+ years of experience in digital marketing. Expertise in SEO, PPC, and content strategy.",
+    text: "Nuestro CEO. Desarrollador web y creador de contenido. Apasionado de la innovación y la búsqueda de intersecciones. ¡Y amante de Astro!",
   },
   {
     name: "Jane Doe",
-    job: "Director of Operations",
+    job: "Directora de Operaciones",
     img: "images/team/jane-doe.webp",
     linkedinUrl: "https://www.linkedin.com/in/janedoe",
-    text: "7+ years of experience in project management and team leadership. Strong organizational and communication skills.",
+    text: "Más de 7 años de experiencia en gestión de proyectos y liderazgo de equipos. Excelentes habilidades organizativas y de comunicación.",
   },
   {
     name: "Emily Johnson",
-    job: "Head of Content",
+    job: "Responsable de Contenidos",
     img: "images/team/emily-johnson.webp",
     linkedinUrl: "https://www.linkedin.com/in/emilyjohnson",
-    text: "Creative content strategist with a knack for storytelling and a track record of driving engagement through compelling campaigns.",
+    text: "Estratega creativa de contenido con un talento especial para el storytelling y una trayectoria en campañas altamente efectivas.",
   },
   {
     name: "Michael Brown",
-    job: "Lead Developer",
+    job: "Desarrollador Principal",
     img: "images/team/michael-brown.webp",
     linkedinUrl: "https://www.linkedin.com/in/michaelbrown",
-    text: "Experienced in full-stack development and passionate about building scalable, user-friendly web applications.",
+    text: "Experto en desarrollo full-stack, apasionado por construir aplicaciones web escalables y fáciles de usar.",
   },
   {
     name: "Sophia Davis",
-    job: "Marketing Specialist",
+    job: "Especialista en Marketing",
     img: "images/team/sophia-davis.webp",
     linkedinUrl: "https://www.linkedin.com/in/sophiadavis",
-    text: "Expert in data-driven marketing and social media strategies. Always seeking innovative ways to connect with audiences.",
+    text: "Experta en marketing basado en datos y estrategias de redes sociales. Siempre busca formas innovadoras de conectar con el público.",
   },
   {
     name: "Freddy Pigeon",
-    job: "Flying Manager",
+    job: "Manager de Altura",
     img: "images/team/freddy-pigeon.webp",
     linkedinUrl: "https://www.linkedin.com/in/freddypigeon",
-    text: "Just our favourite pigeon. We love him & he loves us",
+    text: "Nuestro palomo favorito. Le amamos y él nos ama.",
   },
 ];

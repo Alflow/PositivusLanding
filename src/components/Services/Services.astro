@@ -1,51 +1,21 @@
 ---
 import ServiceCard from "../Card/ServiceCard.astro";
 import SectionHeader from "../SectionHeader/SectionHeader.astro";
+import { sectionHeader, serviceCards } from "../../content/services.js";
 ---
 
-<section class="services">
-  <SectionHeader
-    title="Services"
-    text="At our digital marketing agency, we offer a range of services to help businesses grow and succeed online. These services include:"
-  />
-  
+<section id="services" class="services">
+  <SectionHeader title={sectionHeader.title} text={sectionHeader.text} />
+
   <div class="services__content">
-    <ServiceCard
-      title="Search engine optimization"
-      link="#"
-      imageSrc="/images/services/search-engine.png"
-      colorScheme="white-green"
-    />
-    <ServiceCard
-      title="Pay-per-click advertising"
-      link="#"
-      imageSrc="/images/services/search-engine.png"
-      colorScheme="green-white"
-    />
-    <ServiceCard
-      title="Social Media Marketing"
-      link="#"
-      imageSrc="/images/services/search-engine.png"
-      colorScheme="black-white"
-    />
-    <ServiceCard
-      title="Email Marketing"
-      link="#"
-      imageSrc="/images/services/search-engine.png"
-      colorScheme="white-green"
-    />
-    <ServiceCard
-      title="Creation Content"
-      link="#"
-      imageSrc="/images/services/search-engine.png"
-      colorScheme="green-white"
-    />
-    <ServiceCard
-      title="Analytics and Tracking"
-      link="#"
-      imageSrc="/images/services/search-engine.png"
-      colorScheme="black-green"
-    />
+    {serviceCards.map((service) => (
+      <ServiceCard
+        title={service.title}
+        link={service.link}
+        imageSrc={service.imageSrc}
+        colorScheme={service.colorScheme}
+      />
+    ))}
   </div>
 </section>
 
@@ -73,7 +43,6 @@ import SectionHeader from "../SectionHeader/SectionHeader.astro";
   }
   .services__content {
     margin-top: 80px;
-    display: grid;
     display: grid;
     grid-template-columns: repeat(2, minmax(200px, 1fr)); /* Wrap dinámico */
     gap: 40px;

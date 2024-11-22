@@ -1,13 +1,13 @@
 ---
-import { team } from "../../content/team";
+import { team, teamHeader } from "../../content/team";
 import TeamCard from "../Card/TeamCard.astro";
 import SectionHeader from "../SectionHeader/SectionHeader.astro";
 ---
 
 <section id="team">
   <SectionHeader
-    title="Team"
-    text="Meet the skilled and experienced team behind our successful digital marketing strategies"
+    title={teamHeader.title}
+    text={teamHeader.text}
   />
   <div class="team__grid">
     {
