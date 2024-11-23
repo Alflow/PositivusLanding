@@ -8,7 +8,10 @@ const { cardNumber, title, text } = Astro.props;
       <span class="cardNumber">{cardNumber}</span>
       <h2>{title}</h2>
     </div>
-    <div class="dropdown-label"></div>
+    <div class="dropdown-label">
+      <img src="/images/ui/plus.svg" alt="Expand" class="icon icon-plus" />
+      <img src="/images/ui/minus.svg" alt="Collapse" class="icon icon-minus" />
+    </div>
   </div>
   <div class="dropdown-card__body">
     <p>
@@ -68,19 +71,17 @@ const { cardNumber, title, text } = Astro.props;
     max-height: 0;
     overflow: hidden;
     padding-top: 0;
-    font-size: 18px;
+    font-size: 22px;
     color: var(--color-black);
     transition:
       max-height 0.3s ease,
       padding-top 0.3s ease;
   }
-  .dropdown-card__body.open {
-    border-top: solid 1px var(--color-black);
-  }
 
   .dropdown-card__body.open {
     max-height: 200px;
     padding-top: 30px;
+    border-top: solid 1px var(--color-black);
   }
 
   .dropdown-label {
@@ -91,24 +92,33 @@ const { cardNumber, title, text } = Astro.props;
     height: 40px;
     border: 1px solid #000;
     border-radius: 50%;
-    font-size: 24px;
     cursor: pointer;
     transition: transform 0.3s ease;
-    color: #000;
     background-color: #fff;
   }
 
-  .dropdown-label::before {
-    content: "+";
-    font-size: 44px;
+  .icon {
+    width: 20px;
+    height: 20px;
+    display: none;
   }
 
-  .dropdown-label.open::before {
-    content: "-";
+  .icon-plus {
+    display: block;
   }
+
+  .dropdown-label.open .icon-plus {
+    display: none;
+  }
+
+  .dropdown-label.open .icon-minus {
+    display: block;
+  }
+
   .dropdown-card:has(.open) {
     background-color: var(--color-green);
   }
+
   @media (max-width: 767px) {
     .dropdown-card {
       background-color: var(--color-gray-mid);
@@ -117,26 +127,35 @@ const { cardNumber, title, text } = Astro.props;
       padding-block: 30px;
       transition: background-color 0.3s ease;
     }
+
     .dropdown-card__header {
       padding-bottom: 0;
     }
+
     .dropdown-card:has(.open) .dropdown-card__header {
       padding-bottom: 20px;
     }
+
     .dropdown-card__header .header__content h2 {
       font-size: 18px;
       max-width: 78%;
-
     }
+
     .dropdown-card .cardNumber {
       font-size: 30px;
     }
+
     .dropdown-label {
       height: 20px;
       width: 20px;
     }
-    .dropdown-label::before {
-      font-size: 20px;
+
+    .icon {
+      width: 16px;
+      height: 16px;
+    }
+    .dropdown-card__body {
+      font-size: 18px;
     }
   }
 </style>

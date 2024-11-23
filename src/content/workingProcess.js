@@ -9,7 +9,7 @@ export const workingProcess = [
   },
   {
     title: "Locuciones y doblaje",
-    text: "Ofrecemos servicios de locución realizados por Alfredo o con una IA personalizada que reproduce su voz con gran realismo.",
+    text: "Ofrecemos servicios de locución realizados por Alfredo, o con una IA personalizada que reproduce su voz con gran realismo.",
   },
   {
     title: "Creación de modelos de IA",

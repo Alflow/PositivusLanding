@@ -17,13 +17,13 @@ export const sectionHeader = {
       colorScheme: "green-white",
     },
     {
-      title: "Locuciones y doblaje",
+      title: "Búsqueda de intersecciones",
       link: "/servicios/locuciones",
       imageSrc: "/images/services/ideas.svg",
       colorScheme: "black-white",
     },
     {
-      title: "IA para locución",
+      title: "Voiceover con locutores y modelos de I.A.",
       link: "/servicios/ia-locucion",
       imageSrc: "/images/services/microfono.svg",
       colorScheme: "white-green",
@@ -31,8 +31,14 @@ export const sectionHeader = {
     {
       title: "Modelos de inteligencia artificial",
       link: "/servicios/modelos-ia",
-      imageSrc: "/images/services/microfono.svg",
+      imageSrc: "/images/services/ai.svg",
       colorScheme: "green-white",
+    },
+    {
+      title: "Creación de contenido multimedia",
+      link: "/servicios/media",
+      imageSrc: "/images/services/media.svg",
+      colorScheme: "black-white",
     },
   ];
   
