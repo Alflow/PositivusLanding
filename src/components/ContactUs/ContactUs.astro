@@ -1,0 +1,159 @@
+---
+import { formSection } from "../../content/contactUs";
+import SectionHeader from "../SectionHeader/SectionHeader.astro";
+
+const { header, imageUrl, options, fields, button } = formSection;
+---
+
+<section id="contactUs" class="contact-form">
+  <SectionHeader title={header.title} text={header.description} />
+  <div class="contact-form__inner">
+    <div class="left">
+        <form action="/submit" method="POST">
+            <!-- Opciones (Radios) -->
+            <div class="form-options">
+              {
+                options.map((option) => (
+                  <label for={option.id} class="form-option">
+                    <input
+                      type={option.type}
+                      id={option.id}
+                      name={option.name}
+                      value={option.value}
+                      checked={option.defaultChecked || false}
+                    />
+                    {option.label}
+                  </label>
+                ))
+              }
+            </div>
+      
+            {
+              fields.map((field) => (
+                <div class="form-field">
+                  <label for={field.id}>
+                    {field.label}
+                    {field.required && " *"}
+                  </label>
+                  {field.type === "textarea" ? (
+                    <textarea
+                      id={field.id}
+                      name={field.name}
+                      placeholder={field.placeholder}
+                      required={field.required || false}
+                    />
+                  ) : (
+                    <input
+                      type={field.type}
+                      id={field.id}
+                      name={field.name}
+                      placeholder={field.placeholder}
+                      required={field.required || false}
+                    />
+                  )}
+                </div>
+              ))
+            }
+      
+            <button type={button.type} class="btn btn--black">
+              {button.text}
+            </button>
+          </form>
+    </div>
+    <div class="right">
+        <img src={imageUrl} alt="">
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact-form {
+    padding: 20px;
+    border-radius: 8px;
+    margin: 0 auto;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    
+  }
+  .contact-form__inner {
+    display: flex;
+    background-color: var(--color-gray-mid);
+    padding-block: 60px;
+    padding-inline-start: 100px;
+    padding-inline-end: 40px;
+    border-radius: 45px;
+    gap: 2rem;
+  }
+  .contact-form__inner form {
+    max-width: 556px;
+  }
+  .contact-form__inner .left {
+    width: 70%;
+  }
+  .contact-form__inner .right {
+    display: flex;
+    width: 30%;
+  }
+
+  .form-options {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+  }
+
+  /* Campos del formulario */
+  .form-field {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+  }
+
+  .form-field label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+
+  .form-field input,
+  .form-field textarea {
+    padding: 10px;
+    border: solid 1px var(--color-black);
+    border-radius: 8px;
+    font-size: 16px;
+  }
+
+  /* Botón */
+  .btn {
+    width: 100%;
+  }
+
+  .form-button:hover {
+    background-color: #333;
+  }
+  .form-option input {
+    margin-right: 8px;
+    border: solid 1px var(--color-black);
+    border: solid 3px black !important;
+  }
+  input[type="radio"] {
+    accent-color: var(--color-green);
+    border: none;
+  }
+  img {
+    width: 100%;
+    max-width: 350px;
+  }
+  @media(max-width:768px) {
+    .contact-form__inner {
+        padding-inline: 20px;
+    }
+    .contact-form .left {
+        width: 100%;
+    }
+    .contact-form .right {
+        display: none;
+    }
+    .form-options {
+        display: flex;
+        flex-direction: column;
+    }
+  }
+</style>
