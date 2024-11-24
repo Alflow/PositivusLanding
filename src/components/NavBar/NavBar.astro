@@ -1,4 +1,6 @@
 ---
+import { NAV_LINKS } from "../../content/navBar"
+
 
 ---
 
@@ -7,10 +9,9 @@
     <img src="/images/logos/alflowsitus.webp" alt="Logo Alflowsitus" />
   </div>
   <div class="nav__menu">
-    <a href="#services" class="nav__menu-item">Servicios</a>
-    <a href="#working-process" class="nav__menu-item">Proceso de trabajo</a>
-    <a href="#team" class="nav__menu-item">Nuestro equipo</a>
-    <a href="#testimonials" class="nav__menu-item">Opiniones</a>
+    {NAV_LINKS.map((link) => (
+      <a href={link.href} class="nav__menu-item">{link.label}</a>
+    ))}
   </div>
   <!-- Botón Hamburguesa -->
   <div role="button" class="hamburger hamburger--arrow" id="menu-btn">
@@ -18,19 +19,16 @@
       <div class="hamburger-inner"></div>
     </div>
   </div>
-
 </nav>
 
 <!-- Sidenav -->
 <div id="sidenav" class="sidenav">
   <div class="sidenav-links-container">
-    <a href="#services" class="sidenav-link">Servicios</a>
-    <a href="#working-process" class="sidenav-link">Proceso de trabajo</a>
-    <a href="#team" class="sidenav-link">Nuestro equipo</a>
-    <a href="#testimonials" class="sidenav-link">Opiniones</a>
+    {NAV_LINKS.map((link) => (
+      <a href={link.href} class="sidenav-link">{link.label}</a>
+    ))}
   </div>
 </div>
-
 <style>
   /* Navegación principal */
   .nav {

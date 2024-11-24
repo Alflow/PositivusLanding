@@ -1,6 +1,7 @@
 # build output
 dist/
-
+# todo
+todo.txt
 # generated types
 .astro/
 
