@@ -8,7 +8,7 @@ export const formSection = {
   options: [
     {
       id: "say-hi",
-      label: "Say Hi",
+      label: "Saludar",
       type: "radio",
       name: "purpose",
       value: "say-hi",
@@ -16,7 +16,7 @@ export const formSection = {
     },
     {
       id: "get-quote",
-      label: "Get a Quote",
+      label: "Pedir un presupuesto",
       type: "radio",
       name: "purpose",
       value: "get-quote",
@@ -25,10 +25,10 @@ export const formSection = {
   fields: [
     {
       id: "name",
-      label: "Name",
+      label: "Nombre",
       type: "text",
       name: "name",
-      placeholder: "Name",
+      placeholder: "Nombre",
       required: true,
     },
     {
@@ -41,15 +41,15 @@ export const formSection = {
     },
     {
       id: "message",
-      label: "Message",
+      label: "Mensaje",
       type: "textarea",
       name: "message",
-      placeholder: "Message",
+      placeholder: "Mensaje",
       required: true,
     },
   ],
   button: {
-    text: "Send Message",
+    text: "Enviar",
     type: "submit" as const,
   },
 };

@@ -2,7 +2,7 @@
 const { cardNumber, title, text } = Astro.props;
 ---
 
-<div class="dropdown-card" data-id={cardNumber}>
+<div class="dropdown-card" data-id={cardNumber} data-aos="fade-up" data-aos-once="true">
   <div class="dropdown-card__header" onclick="toggleDropdown(event)">
     <div class="header__content">
       <span class="cardNumber">{cardNumber}</span>

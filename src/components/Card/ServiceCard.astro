@@ -5,7 +5,7 @@ const { title, link, colorScheme, imageSrc } = Astro.props;
 const cardClass = colorScheme ? `${colorScheme}` : "card-default";
 ---
 
-<div class=`service-card service-card--${cardClass}`>
+<div class=`service-card service-card--${cardClass}` data-aos="fade-up" data-aos-once="true">
   <div class="service-card__content">
     <h3 class=`label`>
       {title}
