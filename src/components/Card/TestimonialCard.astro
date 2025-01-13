@@ -4,7 +4,9 @@ const { testimony, name, job } = Astro.props;
 
 <div class="testimonial-card">
   <div class="testimonial-card__testimony">
-    "{testimony}"
+    <p>
+      "{testimony}"
+      </p>
   </div>
   <div class="testimonial-card__person">
     <p class="person-name">{name}</p>
@@ -16,10 +18,11 @@ const { testimony, name, job } = Astro.props;
   /* Caja de testimonio con borde y triángulo */
   .testimonial-card__testimony {
     position: relative; /* Necesario para el ::after */
-    border: solid 1px var(--color-green);
+    border: solid 1px var(--color--primary);
     border-radius: 45px;
     padding-block: 48px;
     padding-inline: 52px;
+    color: var(--color--tertiary);
   }
 
   /* Pico del testimonio */
@@ -32,7 +35,7 @@ const { testimony, name, job } = Astro.props;
     height: 0;
     border-left: 10px solid transparent; /* Lado izquierdo transparente */
     border-right: 10px solid transparent; /* Lado derecho transparente */
-    border-top: 10px solid var(--color-green); /* Solo el borde superior */
+    border-top: 10px solid var(--color--primary); /* Solo el borde superior */
     background: none; /* Sin relleno */
     box-sizing: border-box; /* Asegura que los bordes se rendericen correctamente */
   }
@@ -41,7 +44,7 @@ const { testimony, name, job } = Astro.props;
   }
   .testimonial-card__person .person-name {
     font-weight: bold;
-    color: var(--color-green);
+    color: var(--color--primary);
     margin-top: 40px;
   }
 

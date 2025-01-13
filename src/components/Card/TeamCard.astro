@@ -30,7 +30,7 @@ const { name, job, img, linkedinUrl, text } = Astro.props;
     padding-inline: 35px;
     position: relative;
     border-radius: 50px;
-    border: solid 2px black;
+    border: solid 2px var(--color-secondary);
     box-shadow: black 2px 3px;
     height: auto;
     transition: all 0.8s ease-in-out;
@@ -58,7 +58,6 @@ const { name, job, img, linkedinUrl, text } = Astro.props;
     width: 100%;
     height: auto;
     object-fit: contain;
-    background-image: url("/");
   }
   .team-card .team-card__header .header-info {
     display: flex;

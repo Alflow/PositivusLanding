@@ -1,12 +1,29 @@
 :root {
     /* Variables globales de los colores que vamos a usar */
     --color-green: #B9FF66;
-    --color-black: #000000;
-    --color-white: #FFFFFF;
+    --color-secondary: #000000;
+    --color-tertiary: #FFFFFF;
     --color-gray-dark: #3D3D3D;
-    --color-gray-light: #EFEFEF;
-    --color-gray-mid: #d5cdcd;
-    --color-blue-dark: #191A23;
+    --color-bg-light: #EFEFEF;
+    --color-bg-light: #d5cdcd;
+    --color-bg-dark: #191A23;
+    --color-bg-primary: #d5cdcd;
+
+    /* TEMA ORIGINAL*/
+    --color--primary: #B9FF66;
+    --text--secondary: #000000;
+    --color-bg-light: #d5cdcd;
+    --color-secondary: #000000;
+    --color-tertiary: #FFFFFF;
+    
+    /* NEW THEMING VARIABLES*/
+    --color--primary: #16C47F;
+    --color-secondary:rgb(26, 25, 29);
+    --color-tertiary:rgb(153, 89, 89);
+    --color-bg-light:rgb(147, 147, 147); 
+    --color-bg-dark:rgb(67, 74, 27); 
+    --color-bg-primary:rgb(239, 159, 159);
+   
   }
 
   

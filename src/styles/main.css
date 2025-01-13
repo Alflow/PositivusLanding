@@ -16,8 +16,8 @@ body {
 }
 
 main {
-  background-color: var(--color-white);
-  color: var(--color-black);
+  background-color: var(--color-tertiary);
+  color: var(--color-secondary);
   /* para que no se desborde nada */
   padding-inline: 100px;
   overflow: hidden;
@@ -46,15 +46,15 @@ main {
 
 .label--green {
   background-color: var(--color-green);
-  color: var(--color-black);
+  color: var(--color-secondary);
 }
 .label--white {
-  background-color: var(--color-white);
-  color: var(--color-black);
+  background-color: var(--color-tertiary);
+  color: var(--color-secondary);
 }
 .label--black {
-  background-color: var(--color-black);
-  color: var(--color-white);
+  background-color: var(--color-secondary);
+  color: var(--color-tertiary);
 }
 .btn {
   border-radius: 14px;
@@ -68,10 +68,10 @@ main {
   scale: 1.08;
 }
 .btn.btn--black {
-  background-color: var(--color-black);
-  color: var(--color-white);
+  background-color: var(--color-secondary);
+  color: var(--color-tertiary);
 }
 .btn.btn--white {
-  background-color: var(--color-white);
-  color: var(--color-black);
+  background-color: var(--color-tertiary);
+  color: var(--color-secondary);
 }

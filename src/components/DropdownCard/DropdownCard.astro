@@ -35,7 +35,7 @@ const { cardNumber, title, text } = Astro.props;
 
 <style>
   .dropdown-card {
-    background-color: var(--color-gray-mid);
+    background-color: var(--color-bg-light);
     border-radius: 45px;
     padding-inline: 60px;
     padding-block: 40px;
@@ -72,7 +72,7 @@ const { cardNumber, title, text } = Astro.props;
     overflow: hidden;
     padding-top: 0;
     font-size: 22px;
-    color: var(--color-black);
+    color: var(--color-secondary);
     transition:
       max-height 0.3s ease,
       padding-top 0.3s ease;
@@ -81,7 +81,7 @@ const { cardNumber, title, text } = Astro.props;
   .dropdown-card__body.open {
     max-height: 200px;
     padding-top: 30px;
-    border-top: solid 1px var(--color-black);
+    border-top: solid 1px var(--color-secondary);
   }
 
   .dropdown-label {
@@ -116,12 +116,12 @@ const { cardNumber, title, text } = Astro.props;
   }
 
   .dropdown-card:has(.open) {
-    background-color: var(--color-green);
+    background-color: var(--color--primary);
   }
 
   @media (max-width: 767px) {
     .dropdown-card {
-      background-color: var(--color-gray-mid);
+      background-color: var(--color-bg-primary);
       border-radius: 45px;
       padding-inline: 30px;
       padding-block: 30px;

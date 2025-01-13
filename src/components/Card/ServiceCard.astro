@@ -44,8 +44,8 @@ const cardClass = colorScheme ? `${colorScheme}` : "card-default";
     transition: all 0.2s ease-in-out;
   }
   .service-card--white-green {
-    background-color: var(--color-white);
-    color: var(--color-black);
+    background-color: var(--color-tertiary);
+    color: var(--color-secondary);
   }
   .service-card--white-green .label .word {
     border-radius: 8px;
@@ -53,33 +53,33 @@ const cardClass = colorScheme ? `${colorScheme}` : "card-default";
     background-color: var(--color-green);
   }
   .service-card--black-green {
-    background-color: var(--color-black);
-    color: var(--color-white);
+    background-color: var(--color-secondary);
+    color: var(--color-tertiary);
   }
   .service-card--black-green .label .word {
     border-radius: 8px;
     padding: 3px;
     background-color: var(--color-green);
-    color: var(--color-black);
+    color: var(--color-secondary);
   }
   .service-card--green-white {
     background-color: var(--color-green);
-    color: var(--color-black);
+    color: var(--color-secondary);
   }
   .service-card--green-white .label .word {
     border-radius: 8px;
     padding: 3px;
-    background-color: var(--color-white);
+    background-color: var(--color-tertiary);
   }
   .service-card--black-white {
-    background-color: var(--color-black);
-    color: var(--color-white);
+    background-color: var(--color-secondary);
+    color: var(--color-tertiary);
   }
   .service-card--black-white .label .word {
     border-radius: 8px;
     padding: 3px;
-    background-color: var(--color-white);
-    color: var(--color-black);
+    background-color: var(--color-tertiary);
+    color: var(--color-secondary);
   }
 
   .service-card h3 {
@@ -127,7 +127,7 @@ const cardClass = colorScheme ? `${colorScheme}` : "card-default";
 
   :is(.service-card--white-green, .service-card--green-white)
     .learn-more__icon {
-    background-color: var(--color-black);
+    background-color: var(--color-secondary);
   }
 
   :is(.service-card--white-green, .service-card--green-white)
@@ -139,7 +139,7 @@ const cardClass = colorScheme ? `${colorScheme}` : "card-default";
 
   :is(.service-card--black-white, .service-card--black-green)
     .learn-more__icon {
-    background-color: var(--color-white);
+    background-color: var(--color-tertiary);
   }
   :is(.service-card--black-white, .service-card--black-green)
     .learn-more__icon
@@ -163,14 +163,14 @@ const cardClass = colorScheme ? `${colorScheme}` : "card-default";
       hue-rotate(335deg) brightness(104%) contrast(107%);
   }
   .learn-more__icon--black-white {
-    background-color: var(--color-black);
+    background-color: var(--color-secondary);
   }
   .learn-more__icon--green-white svg {
     filter: brightness(0) saturate(100%) invert(94%) sepia(0%) saturate(7474%)
       hue-rotate(115deg) brightness(107%) contrast(107%);
   }
   .learn-more__icon--white-black {
-    background-color: var(--color-black);
+    background-color: var(--color-secondary);
   }
   .learn-more__icon--white-black svg {
     filter: brightness(0) saturate(100%) invert(0%) sepia(100%) saturate(31%)
