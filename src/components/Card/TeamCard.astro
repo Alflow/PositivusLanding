@@ -5,15 +5,15 @@ const { name, job, img, linkedinUrl, text } = Astro.props;
 ---
 
 <div class="team-card">
-  <a class="linkedin-btn" href={linkedinUrl}>
-    <img src="/images/team/linkedinBtn.svg" alt="" />
+  <a class="linkedin-btn" href={linkedinUrl} aria-label=`Enlace al perfil de LinkedIn de ${name}`>
+    <img src="/images/team/linkedinBtn.svg" alt="Logo de LinkedIn" />
   </a>
   <div class="team-card__header">
     <div class="header__img">
       <StarShapePhoto img={img} />
     </div>
     <div class="header-info">
-      <h4>{name}</h4>
+      <h2>{name}</h2>
       <p>{job}</p>
     </div>
   </div>
@@ -44,7 +44,7 @@ const { name, job, img, linkedinUrl, text } = Astro.props;
     padding-bottom: 28px;
     border-bottom: 1px solid black;
   }
-  .team-card__header h4 {
+  .team-card__header h2 {
     font-size: 20px;
     font-weight: 600;
   }
@@ -87,7 +87,7 @@ const { name, job, img, linkedinUrl, text } = Astro.props;
     .team-card__header {
       padding-bottom: 20px;
     }
-    .team-card__header h4 {
+    .team-card__header h2 {
       font-size: 18px;
     }
     .team-card .team-card__header .header-info p {

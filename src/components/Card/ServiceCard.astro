@@ -5,14 +5,15 @@ const { title, link, colorScheme, imageSrc } = Astro.props;
 const cardClass = colorScheme ? `${colorScheme}` : "card-default";
 ---
 
+
 <div class=`service-card service-card--${cardClass}` data-aos="fade-up" data-aos-once="true">
   <div class="service-card__content">
-    <h3 class=`label`>
+    <h2 class=`label`>
       {title}
-    </h3>
-    <a href={link} class="learn-more">
+    </h2>
+    <a href={link} class="learn-more" aria-label="Learn more about {title}">
       <div class="learn-more__icon learn-more__icon--arrow">
-        <svg
+        <svg aria-label="Icono de flecha hacia la derecha"
           xmlns="http://www.w3.org/2000/svg"
           width="1em"
           height="1em"
@@ -25,7 +26,7 @@ const cardClass = colorScheme ? `${colorScheme}` : "card-default";
     </a>
   </div>
   <div class="service-img">
-    <img src={imageSrc} alt="" />
+    <img src={imageSrc} alt="Image representing {title}" />
   </div>
 </div>
 
@@ -82,7 +83,7 @@ const cardClass = colorScheme ? `${colorScheme}` : "card-default";
     color: var(--color-secondary);
   }
 
-  .service-card h3 {
+  .service-card h2 {
     text-wrap: balance;
     display: flex;
     flex-wrap: wrap;
@@ -199,9 +200,9 @@ const cardClass = colorScheme ? `${colorScheme}` : "card-default";
 </style>
 
 <script>
-document.querySelectorAll("h3").forEach((h3) => {
-  const words = h3.textContent.trim().split(" ").filter(word => word !== ""); // Elimina espacios adicionales
-  h3.innerHTML = words
+document.querySelectorAll("h2").forEach((h2) => {
+  const words = h2.textContent.trim().split(" ").filter(word => word !== ""); // Elimina espacios adicionales
+  h2.innerHTML = words
     .map((word) => `<span class="word">${word}</span>`)
     .join(" "); // Une las palabras con un espacio
 });

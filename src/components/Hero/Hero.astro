@@ -14,7 +14,7 @@ const logosLength = heroImages.logos.length;
         src={heroImages.heroImage.mobile}
         alt={heroImages.heroImage.altText}
       />
-      <p>{heroContent.subtitle}</p>
+      <p class="subtitle">{heroContent.subtitle}</p>
       <a href={heroContent.buttonUrl} class="btn btn--black">
         {heroContent.buttonText}
       </a>
@@ -91,6 +91,10 @@ const logosLength = heroImages.logos.length;
     .hero h1 {
       font-size: 43px;
     }
+    .hero__container .subtitle {
+      text-align: center;
+      text-wrap: balance;
+    }
   }
 
   .hero__container--left {
@@ -144,7 +148,7 @@ const logosLength = heroImages.logos.length;
     gap: 40px;
     /* Incluimos el ancho de los logos más el gap en el cálculo */
     width: calc((200px + 40px) * 2 * var(--logos-length));
-    animation: scrollLeft 10s linear infinite;
+    animation: scrollLeft 30s linear infinite;
   }
 
   .company-logo {
@@ -167,7 +171,7 @@ const logosLength = heroImages.logos.length;
       transform: translateX(0);
     }
     to {
-      transform: translateX(calc(- ((200px + 40px) * var(--logos-length))));
+      transform: translateX(calc(-100% / 2));
     }
   }
 
