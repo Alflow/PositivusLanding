@@ -1,5 +1,8 @@
 ---
 import { heroContent, heroImages } from "../../content/hero";
+
+// Calculamos la longitud del array de logos para usarla en el CSS
+const logosLength = heroImages.logos.length;
 ---
 
 <section class="hero" data-aos="fade-up" data-aos-once="true">
@@ -12,9 +15,9 @@ import { heroContent, heroImages } from "../../content/hero";
         alt={heroImages.heroImage.altText}
       />
       <p>{heroContent.subtitle}</p>
-      <a href={heroContent.buttonUrl} class="btn btn--black"
-        >{heroContent.buttonText}</a
-      >
+      <a href={heroContent.buttonUrl} class="btn btn--black">
+        {heroContent.buttonText}
+      </a>
     </div>
     <div class="hero__container hero__container--right">
       <img
@@ -25,13 +28,22 @@ import { heroContent, heroImages } from "../../content/hero";
     </div>
   </div>
   <div class="hero__companies">
-    {
-      heroImages.logos.map((logo) => (
-        <div class="company-logo">
-          <img src={logo.imgURL} alt={logo.altText} />
-        </div>
-      ))
-    }
+    <div class="hero__logos" style={`--logos-length: ${logosLength};`}>
+      {
+        heroImages.logos.map((logo, index) => (
+          <div class="company-logo">
+            <img src={logo.imgURL} alt={logo.altText} />
+          </div>
+        ))
+      }
+      {
+        heroImages.logos.map((logo, index) => (
+          <div class="company-logo">
+            <img src={logo.imgURL} alt={logo.altText} />
+          </div>
+        ))
+      }
+    </div>
   </div>
 </section>
 
@@ -50,33 +62,35 @@ import { heroContent, heroImages } from "../../content/hero";
     justify-content: space-between;
     max-height: 515px;
   }
+
   .hero__container {
     max-width: 500px;
   }
+
   .hero__container--right {
     display: flex;
     aspect-ratio: 1;
   }
+
   .hero__container--right .img {
     width: 100%;
     height: auto;
     object-fit: contain;
   }
+
   .img--mobile {
     display: none;
   }
+
   .hero h1 {
     font-size: 60px;
     line-height: normal;
-    @media (max-width: 767px) {
+  }
+
+  @media (max-width: 767px) {
+    .hero h1 {
       font-size: 43px;
     }
-  }
-  .hero h2 {
-    font-size: 20px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 28px;
   }
 
   .hero__container--left {
@@ -86,32 +100,83 @@ import { heroContent, heroImages } from "../../content/hero";
     gap: 30px;
     text-wrap: balance;
   }
-  .hero__container--left p {
-    font-size: 20px;
-    @media (max-width: 767px) {
-      font-size: 16px;
-    }
-  }
+
   .hero__companies {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
-    gap: 4rem;
+    width: 90%;
+    max-width: 1920px;
+    margin-inline: auto;
+    position: relative;
+    overflow: hidden;
+    height: 100px;
   }
-  .hero__companies .company-logo {
+
+  .hero__companies::before,
+  .hero__companies::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 50px;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  .hero__companies::before {
+    left: 0;
+    background: linear-gradient(
+      to right,
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0)
+    );
+  }
+
+  .hero__companies::after {
+    right: 0;
+    background: linear-gradient(
+      to left,
+      rgba(255, 255, 255, 1),
+      rgba(255, 255, 255, 0)
+    );
+  }
+
+  .hero__logos {
     display: flex;
+    gap: 40px;
+    /* Incluimos el ancho de los logos más el gap en el cálculo */
+    width: calc((200px + 40px) * 2 * var(--logos-length));
+    animation: scrollLeft 10s linear infinite;
   }
+
+  .company-logo {
+    width: 200px;
+    height: 100px;
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
   .company-logo img {
     width: 100%;
     height: auto;
     object-fit: contain;
   }
-  @media (max-width: 1024px) {
-  .hero__companies {
-    margin-top: 45px;
-      grid-template-columns: repeat(3, 1fr);
-      row-gap: 22px;
+
+  @keyframes scrollLeft {
+    from {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(calc(- ((200px + 40px) * var(--logos-length))));
     }
   }
+
+  @media (max-width: 1024px) {
+    .hero__companies {
+      margin-top: 45px;
+    }
+  }
+
   @media (max-width: 767px) {
     .hero-wrapper {
       flex-direction: column;
@@ -122,21 +187,23 @@ import { heroContent, heroImages } from "../../content/hero";
     .hero__container--right {
       display: none;
     }
+
     .img--mobile {
       display: block;
       width: 100%;
     }
+
     .img--desktop {
       display: none;
     }
+
     .btn {
       width: 80%;
       margin: 0 auto;
     }
+
     .hero__companies {
       margin-top: 16px;
-      grid-template-columns: repeat(2, 1fr);
-      row-gap: 22px;
     }
   }
 </style>

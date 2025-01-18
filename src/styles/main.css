@@ -45,7 +45,7 @@ main {
 }
 
 .label--green {
-  background-color: var(--color-green);
+  background-color: var(--color--primary);
   color: var(--color-secondary);
 }
 .label--white {

@@ -9,7 +9,7 @@ export const heroContent = {
 export const heroImages = {
   heroImage: {
     desktop: "/images/hero/hero_image.webp",
-    mobile: "/images/hero/hero_image.webp", // Podría ser otra versión optimizada para móvil
+    mobile: "/images/hero/hero_image.webp", // Puede ser otra versión optimizada para móvil
     altText: "Hero image for digital success",
   },
   logos: [

@@ -1,6 +1,6 @@
 :root {
     /* Variables globales de los colores que vamos a usar */
-    --color-green: #B9FF66;
+    --color--primary: #B9FF66;
     --color-secondary: #000000;
     --color-tertiary: #FFFFFF;
     --color-gray-dark: #3D3D3D;
@@ -10,13 +10,22 @@
     --color-bg-primary: #d5cdcd;
 
     /* TEMA ORIGINAL*/
-    --color--primary: #B9FF66;
+    --color--primary: #ffafcc;
     --text--secondary: #000000;
     --color-bg-light: #d5cdcd;
     --color-secondary: #000000;
     --color-tertiary: #FFFFFF;
     
-    /* NEW THEMING VARIABLES*/
+    /* TEMAS ALTERNATIVOS -- VARIABLES*/
+    /* Se puede usar filter: hue-rotate(250deg) para cambiar el color a las imágenes; Usar calculadora*/
+
+    /* --color--primary: #ffd670;
+    --text--secondary: #000000;
+    --color-bg-light: #d5cdcd;
+    --color-secondary: #000000;
+    --color-tertiary: #FFFFFF; */
+
+
     /* --color--primary: #16C47F;
     --color-secondary:rgb(26, 25, 29);
     --color-tertiary:rgb(153, 89, 89);
