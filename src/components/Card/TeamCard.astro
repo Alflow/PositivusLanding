@@ -6,7 +6,7 @@ const { name, job, img, linkedinUrl, text } = Astro.props;
 
 <div class="team-card">
   <a class="linkedin-btn" href={linkedinUrl} aria-label=`Enlace al perfil de LinkedIn de ${name}`>
-    <img src="/images/team/linkedinBtn.svg" alt="Logo de LinkedIn" />
+    <img src="/images/team/linkedinBtn.svg" alt="Logo de LinkedIn" loading="lazy"/>
   </a>
   <div class="team-card__header">
     <div class="header__img">
